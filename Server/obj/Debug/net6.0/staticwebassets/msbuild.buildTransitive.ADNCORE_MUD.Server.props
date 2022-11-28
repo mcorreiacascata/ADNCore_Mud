@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ADNCORE_MUD.Server.props" />
+</Project>

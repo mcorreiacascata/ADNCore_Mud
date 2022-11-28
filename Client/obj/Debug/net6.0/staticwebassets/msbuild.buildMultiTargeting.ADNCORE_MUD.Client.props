@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ADNCORE_MUD.Client.props" />
+</Project>

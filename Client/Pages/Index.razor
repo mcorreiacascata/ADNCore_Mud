@@ -5,3 +5,20 @@
 <MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
 <MudText Class="mb-8">Welcome to your new app, powered by MudBlazor!</MudText>
 <MudAlert Severity="Severity.Normal">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>
+
+<!-- MOBILE APP BAR : START -->
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudAppBar Bottom="true" Fixed="true" Color="Color.Transparent" Elevation="1" class="pb-2">
+        <MudGrid Spacing="1" Justify="Justify.FlexEnd">
+            <MudItem>
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" />
+                <MudMenu Label="Advanced Placement" Variant="Variant.Filled" Color="Color.Default" Size="Size.Large">
+                <MudMenuItem>Enlist</MudMenuItem>
+                <MudMenuItem>Barracks</MudMenuItem>
+                <MudMenuItem>Armory</MudMenuItem>
+            </MudMenu>
+            </MudItem>
+        </MudGrid>
+    </MudAppBar>
+</MudHidden>
+<!-- MOBILE APP BAR : END -->

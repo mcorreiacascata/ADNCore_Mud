@@ -1,0 +1,9 @@
+<MudTextField T="string" Label="ERP ID" Value=@ERP_ID ReadOnly="true"/>
+<MudTextField T="string" Label="NIPC" Value=@NIPC ReadOnly="true"/>
+<MudTextField T="string" Label="Designação" Value=@Designacao ReadOnly="true"/>
+
+@code{
+    public string ERP_ID { get; set; } = "999";
+    public string NIPC { get; set; } = "508504180";
+    public string Designacao { get; set; } = "Cascata de Números - Consultores, Lda.";
+}

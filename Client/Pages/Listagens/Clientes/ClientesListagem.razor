@@ -1,0 +1,73 @@
+﻿@page "/listagens/clienteslistagem"
+
+@inject NavigationManager Navigation
+
+@code {
+    public string PageTitle { get; set; } = "Clientes";
+}
+
+<!-- BREADCRUMBS : START -->
+
+<MudBreadcrumbs Items=@_items class="pa-1 pb-2" Style="font-size: 16px">
+</MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+    {
+        new BreadcrumbItem("Dashboard", href: "#"),
+        new BreadcrumbItem("Listagens", href: "#"),
+        new BreadcrumbItem("Clientes", href: null, disabled: true)
+    };
+}
+
+<!-- BREADCRUMBS : END -->
+
+<!-- PAGE TITLE : START -->
+
+<PageTitle>@PageTitle</PageTitle>
+<MudText Typo="Typo.h3" class="pa-0 ma-0" GutterBottom="true">@PageTitle</MudText>
+
+<!-- PAGE TITLE : END -->
+
+<!-- APP BAR : START -->
+<MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+    <MudToolBar class="pa-0 ma-0">
+        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary"
+            Size="Size.Small" OnClick="BtnAdicionar">Adicionar</MudButton>
+        <MudButton />
+    </MudToolBar>
+</MudHidden>
+<!-- APP BAR: END -->
+
+<!-- MOBILE APP BAR : START -->
+<MudHidden Breakpoint="Breakpoint.SmAndDown" Invert="true">
+    <MudAppBar Bottom="true" Fixed="true" Color="Color.Primary" Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Edge="Edge.Start" OnClick="@BtnHome"/>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Material.Filled.Add" Color="Color.Inherit" Edge="Edge.End" OnClick="@BtnAdicionar"/>
+    </MudAppBar>
+</MudHidden>
+<!-- MOBILE APP BAR : END -->
+
+
+
+<!-- PAGE CONTENT : START -->
+<MudContainer class="pa-0">
+    <MudPaper Class="pa-16 ma-0" Outlined="true"></MudPaper>
+</MudContainer>
+<!-- PAGE CONTENT : END -->
+
+
+@code {
+
+    public void BtnAdicionar()
+    {
+        Navigation.NavigateTo("listagens/clientesadicionar");
+    }
+
+    public void BtnHome()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+}

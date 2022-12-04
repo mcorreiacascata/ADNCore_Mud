@@ -199,14 +199,14 @@
       "netstandard.dll": "sha256-yWufW5W4SSfjocBcWTEDqnFwTd\/VYtLMc2Y9mPmlggc=",
       "System.Private.CoreLib.dll": "sha256-H009wzPwRoDZlwvpN4KLCsUwN7Y1AmjKB3PIEHA7ObQ=",
       "ADNCORE_MUD.Shared.dll": "sha256-j4tVD1weoXz1aZUDHpRUGrfV8lH4N\/87s\/ic6wHFTsk=",
-      "ADNCORE_MUD.Client.dll": "sha256-OlLUeGNcxqOBkLhyGnjk9EZC+qjkpl49Liq77jXq4Qc="
+      "ADNCORE_MUD.Client.dll": "sha256-F7a2Cspa9zdoKoxPb8WYatBWs4H4zrgDO8mRxASsH6I="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "ADNCORE_MUD.Shared.pdb": "sha256-dZ\/pMCSSvSKpMi2kzsAHuWtILCjYSzMH8KboncOXyqA=",
-      "ADNCORE_MUD.Client.pdb": "sha256-WH1eulNNuqW3foP1o4B9BOqBD4rgL\/zPT7Cn9zDd0Tk="
+      "ADNCORE_MUD.Client.pdb": "sha256-6V1GAMjC08GY5kHmJ2EaKowtaRbkWXeT4nlXp2IolbQ="
     },
     "runtime": {
       "dotnet.6.0.11.6kh1zxm2hj.js": "sha256-F30V+6jU3jwJYFZoLuwMAqzTiOXu6q7zGgOdjYBofDI=",

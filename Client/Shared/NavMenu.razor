@@ -1,5 +1,27 @@
-﻿<MudNavMenu>
-    <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-    <MudNavLink Href="counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Counter</MudNavLink>
-    <MudNavLink Href="fetchdata" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Fetch data</MudNavLink>
-</MudNavMenu>
+﻿<MudNavMenu Bordered="true">
+        <MudNavLink Href="/dashboard">Dashboard</MudNavLink>
+        <MudNavGroup Title="Listagens" Expanded="true">
+            <MudNavLink Href="/listagens/clienteslistagem">Clientes</MudNavLink>
+            <MudNavLink Href="/listagens/clientesficha">Projetos</MudNavLink>
+            <MudNavLink Href="/listagens/medidas">Medidas</MudNavLink>
+            <MudNavLink Href="/listagens/estados">Estados</MudNavLink>
+            <MudNavLink Href="/listagens/responsaveis">Responsáveis</MudNavLink>
+        </MudNavGroup>
+        <MudNavGroup Title="Utilitários" Expanded="false">
+            <MudNavLink Href="/listagens/clientes">Senhas</MudNavLink>
+            <MudNavLink Href="/listagens/projetos">Contactos</MudNavLink>
+            <MudNavLink Href="/listagens/medidas">Modelos</MudNavLink>
+        </MudNavGroup>
+        <MudNavGroup Title="Tabelas" Expanded="false">
+            <MudNavLink Href="/listagens/clientes">Clientes</MudNavLink>
+            <MudNavLink Href="/listagens/projetos">Projetos</MudNavLink>
+            <MudNavLink Href="/listagens/medidas">Medidas</MudNavLink>
+            <MudNavLink Href="/listagens/estados">Estados</MudNavLink>
+            <MudNavLink Href="/listagens/responsaveis">Responsáveis</MudNavLink>
+            <MudNavLink Href="/listagens/responsaveis">Etiquetas</MudNavLink>
+            <MudNavLink Href="/listagens/responsaveis">Contactos</MudNavLink>
+            <MudNavLink Href="/listagens/responsaveis">Distritos</MudNavLink>
+            <MudNavLink Href="/listagens/responsaveis">Concelhos</MudNavLink>
+        </MudNavGroup>
+        <MudNavLink Href="/about">Configurações</MudNavLink>
+    </MudNavMenu>

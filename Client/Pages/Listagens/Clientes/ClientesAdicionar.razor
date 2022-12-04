@@ -1,0 +1,114 @@
+﻿@page "/listagens/clientesadicionar"
+
+@inject NavigationManager Navigation
+
+@code {
+    public string PageTitle { get; set; } = "Clientes";
+}
+
+<!-- BREADCRUMBS : START -->
+
+<MudBreadcrumbs Items=@_items class="pa-1 pb-2" Style="font-size: 16px">
+</MudBreadcrumbs>
+
+@code {
+    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+{
+new BreadcrumbItem("Dashboard", href: "#"),
+new BreadcrumbItem("Listagens", href: "#"),
+new BreadcrumbItem("Clientes", href: "#"),
+new BreadcrumbItem("Ficha", href: null, disabled: true)
+};
+}
+
+<!-- BREADCRUMBS : END -->
+
+<!-- PAGE TITLE : START -->
+
+<PageTitle>@PageTitle</PageTitle>
+<MudText Typo="Typo.h3" class="pa-0 ma-0" GutterBottom="true">@PageTitle</MudText>
+
+<!-- PAGE TITLE : END -->
+
+<!-- DESKTOP APP BAR : START -->
+<MudHidden Breakpoint="Breakpoint.SmAndDown">
+    <MudToolBar class="pa-0 ma-0">
+        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Primary"
+            Size="Size.Small" Class="mr-2" OnClick="@BtnGuardar">
+            Guardar
+        </MudButton>
+        <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Cancel" Color="Color.Error"
+            Size="Size.Small" OnClick="@BtnCancelar">
+            Cancelar
+        </MudButton>
+    </MudToolBar>
+</MudHidden>
+<!-- APP BAR: END -->
+
+<!-- MOBILE APP BAR : START -->
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudAppBar Bottom="true" Fixed="true" Color="Color.Transparent" Elevation="1" class="pb-2">
+        <MudStack>
+            <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Home" OnClick="@BtnHome"/>
+        </MudStack>
+        <MudSpacer />
+        <MudGrid Spacing="1" Justify="Justify.FlexEnd">
+            <MudItem>
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Cancel" />
+            </MudItem>
+            <MudItem>
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Save" />
+            </MudItem>
+        </MudGrid>
+    </MudAppBar>
+</MudHidden>
+<!-- MOBILE APP BAR : END -->
+
+<!-- PAGE CONTENT : START -->
+<MudContainer class="pa-0">
+    <MudTabs Elevation="0" Rounded="true" ApplyEffectsToContainer="true">
+        <MudTabPanel Text="Ficha">
+            <MudPaper Class="pa-2 ma-0" Outlined="true">
+                <ClienteFichaAdicionar />
+            </MudPaper>
+        </MudTabPanel>
+        <MudTabPanel Text="Projetos" Disabled="true">
+            <MudPaper Class="pa-2 ma-0" Outlined="true">
+                <ClienteFichaProjetos />
+            </MudPaper>
+        </MudTabPanel>
+        <MudTabPanel Text="Contactos" Disabled="true">
+            <MudPaper Class="pa-2 ma-0" Outlined="true">
+                <ClienteFichaContactos />
+            </MudPaper>
+        </MudTabPanel>
+        <MudTabPanel Text="Ocorrências" Disabled="true">
+            <MudPaper Class="pa-2 ma-0" Outlined="true">
+                <ClienteFichaOcorrencias />
+            </MudPaper>
+        </MudTabPanel>
+    </MudTabs>
+</MudContainer>
+<!-- PAGE CONTENT : END -->
+
+
+
+
+@code {
+
+    public void BtnGuardar()
+    {
+        Navigation.NavigateTo("listagens/clientesficha");
+    }
+
+    public void BtnCancelar()
+    {
+        Navigation.NavigateTo("listagens/clientesficha");
+    }
+
+    public void BtnHome()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+}

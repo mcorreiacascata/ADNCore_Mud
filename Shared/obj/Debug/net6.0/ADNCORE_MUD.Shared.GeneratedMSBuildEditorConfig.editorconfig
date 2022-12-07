@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = ADNCORE_MUD.Shared
-build_property.ProjectDir = C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\
+build_property.ProjectDir = c:\Users\mcorr\source\repos\ADNCore_Mud\Shared\

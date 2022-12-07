@@ -2,8 +2,17 @@
 
 @inject NavigationManager Navigation
 
+@inject VclienteService _VCliente
+
 @code {
     public string PageTitle { get; set; } = "Clientes";
+
+    public IEnumerable<vcliente>? vcliente { get; set; }
+    protected override async Task OnParametersSetAsync()
+    {
+        vcliente = await _VCliente.Get();
+    }
+
 }
 
 <!-- BREADCRUMBS : START -->
@@ -12,49 +21,144 @@
 </MudBreadcrumbs>
 
 @code {
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
-    {
-        new BreadcrumbItem("Dashboard", href: "#"),
-        new BreadcrumbItem("Listagens", href: "#"),
-        new BreadcrumbItem("Clientes", href: null, disabled: true)
-    };
+    private List<MudBlazor.BreadcrumbItem> _items = new List<MudBlazor.BreadcrumbItem>
+{
+new MudBlazor.BreadcrumbItem("Dashboard", href: "#"),
+new MudBlazor.BreadcrumbItem("Listagens", href: "#"),
+new MudBlazor.BreadcrumbItem("Clientes", href: null, disabled: true)
+};
 }
 
 <!-- BREADCRUMBS : END -->
 
-<!-- PAGE TITLE : START -->
-
-<PageTitle>@PageTitle</PageTitle>
-<MudText Typo="Typo.h3" class="pa-0 ma-0" GutterBottom="true">@PageTitle</MudText>
-
-<!-- PAGE TITLE : END -->
-
-<!-- APP BAR : START -->
-<MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
-    <MudToolBar class="pa-0 ma-0">
-        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary"
-            Size="Size.Small" OnClick="BtnAdicionar">Adicionar</MudButton>
-        <MudButton />
-    </MudToolBar>
-</MudHidden>
-<!-- APP BAR: END -->
+<MudStack Row="true">
+    <!-- PAGE TITLE : START -->
+    <PageTitle>@PageTitle</PageTitle>
+    <MudText Typo="Typo.h3" class="pa-0 ma-0" GutterBottom="true">@PageTitle</MudText>
+    <!-- PAGE TITLE : END -->
+    <MudDivider Vertical="true"></MudDivider>
+    <!-- APP BAR : START -->
+    <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+        <MudToolBar class="pa-0 ma-0">
+            <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Add" Color="Color.Primary"
+                Size="Size.Small" OnClick="BtnAdicionar">Adicionar</MudButton>
+            <MudButton />
+        </MudToolBar>
+    </MudHidden>
+    <!-- APP BAR: END -->
+</MudStack>
 
 <!-- MOBILE APP BAR : START -->
 <MudHidden Breakpoint="Breakpoint.SmAndDown" Invert="true">
     <MudAppBar Bottom="true" Fixed="true" Color="Color.Primary" Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Edge="Edge.Start" OnClick="@BtnHome"/>
+        <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Edge="Edge.Start" OnClick="@BtnHome" />
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Material.Filled.Add" Color="Color.Inherit" Edge="Edge.End" OnClick="@BtnAdicionar"/>
+        <MudIconButton Icon="@Icons.Material.Filled.Add" Color="Color.Inherit" Edge="Edge.End"
+            OnClick="@BtnAdicionar" />
     </MudAppBar>
 </MudHidden>
 <!-- MOBILE APP BAR : END -->
 
-
-
 <!-- PAGE CONTENT : START -->
-<MudContainer class="pa-0">
-    <MudPaper Class="pa-16 ma-0" Outlined="true"></MudPaper>
-</MudContainer>
+
+<!-- TABELA CLIENTES : START -->
+
+<!-- |----- VISUAL -->
+<SfGrid @ref="DefaultGrid" ID="Grid" TValue="vcliente" RowHeight="40" DataSource="@vcliente" AllowFiltering="true"
+    AllowSorting="true" AllowPaging="true" AllowExcelExport="true" AllowPdfExport="true">
+    <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Excel"></GridFilterSettings>
+    <GridPageSettings PageSize="@pagesize" PageSizes="@pagesizes"></GridPageSettings>
+    <GridEvents RowSelected="GetLinhaSelecionada" TValue="vcliente"></GridEvents>
+    <SfToolbar>
+        <ToolbarItems>
+            <ToolbarItem Type="ItemType.Input" Align="Syncfusion.Blazor.Navigations.ItemAlign.Left">
+                <Template>
+                    <MudStack Row="true">
+                        <SfTextBox Placeholder="Pesquisar" Width="500px" Input="OnInput"></SfTextBox>
+                        <MudSpacer></MudSpacer>
+                        <MudIconButton Icon="@Icons.Material.Filled.PictureAsPdf" Color="Color.Error" Edge="Edge.Start"
+                            OnClick="@PdfExport" />
+                        <MudIconButton Icon="@Icons.Material.Filled.TableView" Color="Color.Success" Edge="Edge.Start"
+                            OnClick="@ExcelExport" />
+                    </MudStack>
+                </Template>
+            </ToolbarItem>
+        </ToolbarItems>
+    </SfToolbar>
+    <GridColumns>
+        <GridColumn Field="clienteId" Visible="false"></GridColumn>
+        <GridColumn Field="clienteErpid" HeaderText="ERP ID" Width="10%"></GridColumn>
+        <GridColumn Field="clienteNipc" HeaderText="NIPC" Width="10%"></GridColumn>
+        <GridColumn Field="clienteNome" HeaderText="Designação" Width="70%"></GridColumn>
+        <GridColumn HeaderText="" Width="5%">
+            <Template>
+                @{
+                    var cliente = (context as vcliente);
+                    <div>
+                        <MudTooltip Text="Editar">
+                            <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" Edge="Edge.Start"
+                            OnClick="() => BtnEditar(cliente.clienteId)" />
+                        </MudTooltip>
+                    </div>
+                }
+            </Template>
+        </GridColumn>
+        <GridColumn HeaderText="" Width="5%">
+            <Template>
+                @{
+                    var cliente = (context as vcliente);
+                    <div>
+                        <MudTooltip Text="Ficha">
+                            <MudIconButton Icon="@Icons.Material.Filled.DynamicForm" Color="Color.Primary" Edge="Edge.Start"
+                            OnClick="() => BtnFicha(cliente.clienteId)" />
+                        </MudTooltip>
+                    </div>
+                }
+            </Template>
+        </GridColumn>
+    </GridColumns>
+</SfGrid>
+
+<!-- |----- LOGICA -->
+@code {
+
+    [Parameter]
+    public EventCallback<int> OnSelecionarRegisto { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnSelecionarCriacao { get; set; }
+
+
+    private SfGrid<vcliente> DefaultGrid;
+
+    public void OnInput(InputEventArgs args)
+    {
+        this.DefaultGrid.SearchAsync(args.Value);
+    }
+
+    public async Task ExcelExport()
+    {
+        await this.DefaultGrid.ExportToExcelAsync();
+    }
+
+    public async Task PdfExport()
+    {
+        await this.DefaultGrid.ExportToPdfAsync();
+    }
+
+    // GERIR A LINHA SELECIONADA DA TABELA E PASSAR O VALOR DOS DADOS DA LINHA PARA UM OBJETO
+    public async Task GetLinhaSelecionada(RowSelectEventArgs<vcliente> args)
+    {
+        await OnSelecionarRegisto.InvokeAsync(args.Data.clienteId);
+    }
+
+    // DEFINIÇÃO DO NÚMERO DE LINHAS DEFAULT E DOS INTERVALOS DE PÁGINAS QUE PODEM SER SELECIONADOS
+    public int pagesize { get; set; } = 15;
+    public object[] pagesizes = new object[] { 15, 20, 25, "All" };
+
+}
+<!-- TABELA CLIENTES : END -->
+
 <!-- PAGE CONTENT : END -->
 
 
@@ -63,6 +167,16 @@
     public void BtnAdicionar()
     {
         Navigation.NavigateTo("listagens/clientesadicionar");
+    }
+
+    public void BtnEditar(int clienteId)
+    {
+        Navigation.NavigateTo("listagens/clienteseditar/" + clienteId);
+    }
+
+    public void BtnFicha(int clienteId)
+    {
+        Navigation.NavigateTo("listagens/clientesficha/" + clienteId);
     }
 
     public void BtnHome()

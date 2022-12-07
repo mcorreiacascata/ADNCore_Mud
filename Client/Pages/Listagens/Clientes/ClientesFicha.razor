@@ -1,7 +1,26 @@
-﻿@page "/listagens/clientesficha"
+﻿@page "/listagens/clientesficha/{clienteId:int}"
+
+@inject NavigationManager Navigation
+
+@inject VclienteService _VCliente
 
 @code {
     public string PageTitle { get; set; } = "Clientes";
+
+    // OBTER ID DO CLIENTE SELECIONADO
+    [Parameter]
+    public int clienteId { get; set; }
+
+    // OBTER DADOS DO CLIENTE
+    public vcliente? clienteSelecionado { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        if (clienteId != 0)
+        {
+            clienteSelecionado = await _VCliente.Get(clienteId);
+        }
+    }
+
 }
 
 <!-- BREADCRUMBS : START -->
@@ -9,39 +28,51 @@
 </MudBreadcrumbs>
 
 @code {
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+    private List<MudBlazor.BreadcrumbItem> _items = new List<MudBlazor.BreadcrumbItem>
 {
-new BreadcrumbItem("Dashboard", href: "#"),
-new BreadcrumbItem("Listagens", href: "#"),
-new BreadcrumbItem("Clientes", href: "#"),
-new BreadcrumbItem("Ficha", href: null, disabled: true)
+new MudBlazor.BreadcrumbItem("Dashboard", href: "#"),
+new MudBlazor.BreadcrumbItem("Listagens", href: "#"),
+new MudBlazor.BreadcrumbItem("Clientes", href: "#"),
+new MudBlazor.BreadcrumbItem("Ficha", href: null, disabled: true)
 };
 }
 <!-- BREADCRUMBS : END -->
 
+<MudStack Row="true">
 <!-- PAGE TITLE : START -->
 <PageTitle>@PageTitle</PageTitle>
 <MudText Typo="Typo.h3" class="pa-0 ma-0" GutterBottom="true">@PageTitle</MudText>
-
 <!-- PAGE TITLE : END -->
-
+<MudDivider Vertical="true"></MudDivider>
 <!-- APP BAR : START -->
 <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
     <MudToolBar class="pa-0 ma-0">
         <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Edit" Color="Color.Primary"
-            Size="Size.Small">
+            Size="Size.Small" OnClick="() => BtnEditar(clienteId)">
             Editar
         </MudButton>
     </MudToolBar>
 </MudHidden>
+</MudStack>
+
+@if(clienteSelecionado != null)
+{
+<MudText Typo="Typo.body1" >@clienteSelecionado.clienteNipc | @clienteSelecionado.clienteNome</MudText>
+}
 <!-- APP BAR: END -->
 
 <!-- MOBILE APP BAR : START -->
-<MudHidden Breakpoint="Breakpoint.SmAndDown" Invert="true">
-    <MudAppBar Bottom="true" Fixed="true" Color="Color.Primary" Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Edge="Edge.Start" />
+<MudHidden Breakpoint="Breakpoint.MdAndUp">
+    <MudAppBar Bottom="true" Fixed="true" Color="Color.Transparent" Elevation="1" class="pb-2">
+        <MudStack>
+            <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Home" OnClick="@BtnHome" />
+        </MudStack>
         <MudSpacer />
-        <MudIconButton Icon="@Icons.Material.Filled.Add" Color="Color.Inherit" Edge="Edge.End" />
+        <MudGrid Spacing="1" Justify="Justify.FlexEnd">
+            <MudItem>
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Edit" />
+            </MudItem>
+        </MudGrid>
     </MudAppBar>
 </MudHidden>
 <!-- MOBILE APP BAR : END -->
@@ -50,8 +81,8 @@ new BreadcrumbItem("Ficha", href: null, disabled: true)
 <MudContainer class="pa-0">
     <MudTabs Elevation="0" Rounded="true" ApplyEffectsToContainer="true">
         <MudTabPanel Text="Ficha">
-            <MudPaper Class="pa-2 ma-0" Outlined="true">
-                <ClienteFichaFicha />
+            <MudPaper Class="pa-2 ma-0 overflow-auto" Outlined="true">
+                <ClienteFichaFicha clienteSelecionado=@clienteSelecionado />
             </MudPaper>
         </MudTabPanel>
         <MudTabPanel Text="Projetos">
@@ -75,5 +106,20 @@ new BreadcrumbItem("Ficha", href: null, disabled: true)
 
 
 @code {
+
+    public void BtnHome()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    public void BtnEditar(int clienteId)
+    {
+        Navigation.NavigateTo("listagens/clienteseditar/" + clienteId);
+    }
+
+    public void BtnCancelar(int clienteId)
+    {
+        Navigation.NavigateTo("listagens/clienteseditar/" + clienteId);
+    }
 
 }

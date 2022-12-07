@@ -10,3 +10,15 @@ C:\Users\miguelcorreia\Documents\Repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCO
 C:\Users\miguelcorreia\Documents\Repos\ADNCore_Mud\Shared\obj\Debug\net6.0\refint\ADNCORE_MUD.Shared.dll
 C:\Users\miguelcorreia\Documents\Repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.pdb
 C:\Users\miguelcorreia\Documents\Repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ref\ADNCORE_MUD.Shared.dll
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\bin\Debug\net6.0\ADNCORE_MUD.Shared.deps.json
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\bin\Debug\net6.0\ADNCORE_MUD.Shared.dll
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\bin\Debug\net6.0\ADNCORE_MUD.Shared.pdb
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.csproj.AssemblyReference.cache
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.AssemblyInfoInputs.cache
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.AssemblyInfo.cs
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.csproj.CoreCompileInputs.cache
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.dll
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\refint\ADNCORE_MUD.Shared.dll
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ADNCORE_MUD.Shared.pdb
+C:\Users\mcorr\source\repos\ADNCore_Mud\Shared\obj\Debug\net6.0\ref\ADNCORE_MUD.Shared.dll

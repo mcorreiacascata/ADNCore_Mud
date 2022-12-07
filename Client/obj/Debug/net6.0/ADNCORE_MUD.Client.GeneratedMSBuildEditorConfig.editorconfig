@@ -9,77 +9,69 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = ADNCORE_MUD.Client
 build_property.RootNamespace = ADNCORE_MUD.Client
-build_property.ProjectDir = C:\Users\miguelcorreia\Documents\Repos\ADNCore_Mud\Client\
+build_property.ProjectDir = C:\Users\mcorr\source\repos\ADNCore_Mud\Client\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\miguelcorreia\Documents\Repos\ADNCore_Mud\Client
+build_property.MSBuildProjectDirectory = C:\Users\mcorr\source\repos\ADNCore_Mud\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/App.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaAdicionar.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Layouts/MainLayout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRzXE1haW5MYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaAdicionar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0YWdlbnNcQ2xpZW50ZXNcQ2xpZW50ZUZpY2hhQWRpY2lvbmFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaContactos.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaContactos.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0YWdlbnNcQ2xpZW50ZXNcQ2xpZW50ZUZpY2hhQ29udGFjdG9zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaEditar.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaEditar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0YWdlbnNcQ2xpZW50ZXNcQ2xpZW50ZUZpY2hhRWRpdGFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaFicha.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaFicha.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0YWdlbnNcQ2xpZW50ZXNcQ2xpZW50ZUZpY2hhRmljaGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaOcorrencias.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaOcorrencias.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0YWdlbnNcQ2xpZW50ZXNcQ2xpZW50ZUZpY2hhT2NvcnJlbmNpYXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaProjetos.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Components/Pages/Listagens/Clientes/ClienteFichaProjetos.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMaXN0YWdlbnNcQ2xpZW50ZXNcQ2xpZW50ZUZpY2hhUHJvamV0b3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Layouts/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0c1xNYWluTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/Index.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesAdicionar.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesAdicionar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdGFnZW5zXENsaWVudGVzXENsaWVudGVzQWRpY2lvbmFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesEditar.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesEditar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdGFnZW5zXENsaWVudGVzXENsaWVudGVzRWRpdGFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesFicha.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesFicha.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdGFnZW5zXENsaWVudGVzXENsaWVudGVzRmljaGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesListagem.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/Pages/Listagens/Clientes/ClientesListagem.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdGFnZW5zXENsaWVudGVzXENsaWVudGVzTGlzdGFnZW0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/miguelcorreia/Documents/Repos/ADNCore_Mud/Client/_Imports.razor]
+[C:/Users/mcorr/source/repos/ADNCore_Mud/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

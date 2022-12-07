@@ -1,9 +1,33 @@
-<MudTextField T="string" Label="ERP ID" Value=@ERP_ID ReadOnly="true"/>
-<MudTextField T="string" Label="NIPC" Value=@NIPC ReadOnly="true"/>
-<MudTextField T="string" Label="Designação" Value=@Designacao ReadOnly="true"/>
+@inject VclienteService _VCliente
 
-@code{
-    public string ERP_ID { get; set; } = "999";
-    public string NIPC { get; set; } = "508504180";
-    public string Designacao { get; set; } = "Cascata de Números - Consultores, Lda.";
+@code {
+    // OBTER ID DO CLIENTE SELECIONADO
+    [Parameter]
+    public int clienteId { get; set; }
+
+    // OBTER DADOS DO CLIENTE
+    public vcliente? clienteSelecionado { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        if (clienteId != 0)
+        {
+            clienteSelecionado = await _VCliente.Get(clienteId);
+        }
+    }
+}
+
+@if (clienteSelecionado != null)
+{
+    <MudTextField T="int" Label="ID" Value=@clienteSelecionado.clienteId />
+    <MudTextField T="string" Label="ERP ID  " Value=@clienteSelecionado.clienteErpid />
+    <MudTextField T="string" Label="NIPC" Value=@clienteSelecionado.clienteNipc />
+    <MudTextField T="string" Label="Designação" Value=@clienteSelecionado.clienteNome />
+    <MudTextField T="string" Label="E-mail" Value=@clienteSelecionado.clienteEmail />
+    <MudTextField T="string" Label="Telefone" Value=@clienteSelecionado.clienteTelefone />
+    <MudTextField T="string" Label="Região" Value=@clienteSelecionado.regiaoNome />
+    <MudTextField T="string" Label="Distrito" Value=@clienteSelecionado.distritoNome />
+    <MudTextField T="string" Label="Concelho" Value=@clienteSelecionado.concelhoNome />
+    <MudTextField T="string" Label="Setor" Value=@clienteSelecionado.setorNome />
+    <MudTextField T="string" Label="CAE" Value=@clienteSelecionado.setorNome />
+    <MudTextField T="string" Label="Dimensão" Value=@clienteSelecionado.dimensaoNome />
 }

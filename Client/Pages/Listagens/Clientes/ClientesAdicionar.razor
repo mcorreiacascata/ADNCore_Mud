@@ -12,12 +12,12 @@
 </MudBreadcrumbs>
 
 @code {
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
+    private List<MudBlazor.BreadcrumbItem> _items = new List<MudBlazor.BreadcrumbItem>
 {
-new BreadcrumbItem("Dashboard", href: "#"),
-new BreadcrumbItem("Listagens", href: "#"),
-new BreadcrumbItem("Clientes", href: "#"),
-new BreadcrumbItem("Ficha", href: null, disabled: true)
+new MudBlazor.BreadcrumbItem("Dashboard", href: "#"),
+new MudBlazor.BreadcrumbItem("Listagens", href: "#"),
+new MudBlazor.BreadcrumbItem("Clientes", href: "listagens/clienteslistagem"),
+new MudBlazor.BreadcrumbItem("Ficha", href: null, disabled: true)
 };
 }
 
@@ -54,10 +54,10 @@ new BreadcrumbItem("Ficha", href: null, disabled: true)
         <MudSpacer />
         <MudGrid Spacing="1" Justify="Justify.FlexEnd">
             <MudItem>
-                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Cancel" />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Cancel" OnClick="@BtnCancelar" />
             </MudItem>
             <MudItem>
-                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Save" />
+                <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Save" OnClick="@BtnGuardar"/>
             </MudItem>
         </MudGrid>
     </MudAppBar>
@@ -103,7 +103,7 @@ new BreadcrumbItem("Ficha", href: null, disabled: true)
 
     public void BtnCancelar()
     {
-        Navigation.NavigateTo("listagens/clientesficha");
+        Navigation.NavigateTo("listagens/clienteslistagem");
     }
 
     public void BtnHome()

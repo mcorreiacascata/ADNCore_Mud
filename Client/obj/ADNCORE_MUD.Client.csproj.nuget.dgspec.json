@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj": {}
+    "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj": {
+    "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj",
+        "projectUniqueName": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj",
         "projectName": "ADNCORE_MUD.Client",
-        "projectPath": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj",
-        "packagesPath": "C:\\Users\\miguelcorreia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Client\\obj\\",
+        "projectPath": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Client\\ADNCORE_MUD.Client.csproj",
+        "packagesPath": "C:\\Users\\mcorr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\miguelcorreia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mcorr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +33,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj": {
-                "projectPath": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj"
+              "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj": {
+                "projectPath": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj"
               }
             }
           }
@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[6.0.7, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "MudBlazor": {
               "target": "Package",
               "version": "[6.0.13, )"
@@ -65,6 +69,18 @@
             "MudBlazor.ThemeManager": {
               "target": "Package",
               "version": "[1.0.7, )"
+            },
+            "Syncfusion.Blazor.Grid": {
+              "target": "Package",
+              "version": "[20.3.0.59, )"
+            },
+            "Syncfusion.Blazor.Navigations": {
+              "target": "Package",
+              "version": "[20.3.0.59, )"
+            },
+            "Syncfusion.Blazor.Themes": {
+              "target": "Package",
+              "version": "[20.3.0.59, )"
             }
           },
           "imports": [
@@ -98,20 +114,20 @@
         }
       }
     },
-    "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj": {
+    "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj",
         "projectName": "ADNCORE_MUD.Shared",
-        "projectPath": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj",
-        "packagesPath": "C:\\Users\\miguelcorreia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miguelcorreia\\Documents\\Repos\\ADNCore_Mud\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Shared\\ADNCORE_MUD.Shared.csproj",
+        "packagesPath": "C:\\Users\\mcorr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mcorr\\source\\repos\\ADNCore_Mud\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\miguelcorreia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mcorr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

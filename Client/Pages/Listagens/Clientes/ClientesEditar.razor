@@ -1,9 +1,14 @@
-﻿@page "/listagens/clienteseditar"
+﻿@page "/listagens/clienteseditar/{clienteId:int}"
 
 @inject NavigationManager Navigation
 
 @code {
     public string PageTitle { get; set; } = "Clientes";
+
+    // OBTER ID DO CLIENTE SELECIONADO
+    [Parameter]
+    public int clienteId { get; set; }
+
 }
 
 <!-- BREADCRUMBS : START -->
@@ -12,56 +17,58 @@
 </MudBreadcrumbs>
 
 @code {
-    private List<BreadcrumbItem> _items = new List<BreadcrumbItem>
-    {
-        new BreadcrumbItem("Dashboard", href: "#"),
-        new BreadcrumbItem("Listagens", href: "#"),
-        new BreadcrumbItem("Clientes", href: "#"),
-        new BreadcrumbItem("Ficha", href: null, disabled: true)
-    };
+    private List<MudBlazor.BreadcrumbItem> _items = new List<MudBlazor.BreadcrumbItem>
+{
+new MudBlazor.BreadcrumbItem("Dashboard", href: "#"),
+new MudBlazor.BreadcrumbItem("Listagens", href: "#"),
+new MudBlazor.BreadcrumbItem("Clientes", href: "#"),
+new MudBlazor.BreadcrumbItem("Ficha", href: null, disabled: true)
+};
 }
 
 <!-- BREADCRUMBS : END -->
 
+<MudStack Row=true>
 <!-- PAGE TITLE : START -->
-
 <PageTitle>@PageTitle</PageTitle>
 <MudText Typo="Typo.h3" class="pa-0 ma-0" GutterBottom="true">@PageTitle</MudText>
-
 <!-- PAGE TITLE : END -->
-
+<MudDivider Vertical="true"></MudDivider>
 <!-- APP BAR : START -->
 <MudToolBar class="pa-0 ma-0">
-    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Primary" Size="Size.Small" Class="mr-2" OnClick="@BtnGuardar">
+    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Save" Color="Color.Primary" Size="Size.Small"
+        Class="mr-2" OnClick="@BtnGuardar">
         Guardar
     </MudButton>
-    <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Cancel" Color="Color.Error" Size="Size.Small" OnClick="@BtnCancelar">
+    <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Cancel" Color="Color.Error"
+        Size="Size.Small" OnClick="@BtnCancelar">
         Cancelar
     </MudButton>
 </MudToolBar>
 <!-- APP BAR: END -->
+</MudStack>
 
 <!-- PAGE CONTENT : START -->
 <MudContainer class="pa-0">
     <MudTabs Elevation="0" Rounded="true" ApplyEffectsToContainer="true">
         <MudTabPanel Text="Ficha">
             <MudPaper Class="pa-2 ma-0" Outlined="true">
-                <ClienteFichaEditar/>
+                <ClienteFichaEditar clienteId=@clienteId/>
             </MudPaper>
         </MudTabPanel>
         <MudTabPanel Text="Projetos" Disabled="true">
             <MudPaper Class="pa-2 ma-0" Outlined="true">
-                <ClienteFichaProjetos/>
+                <ClienteFichaProjetos />
             </MudPaper>
         </MudTabPanel>
         <MudTabPanel Text="Contactos" Disabled="true">
             <MudPaper Class="pa-2 ma-0" Outlined="true">
-                <ClienteFichaContactos/>
+                <ClienteFichaContactos />
             </MudPaper>
         </MudTabPanel>
         <MudTabPanel Text="Ocorrências" Disabled="true">
             <MudPaper Class="pa-2 ma-0" Outlined="true">
-                <ClienteFichaOcorrencias/>
+                <ClienteFichaOcorrencias />
             </MudPaper>
         </MudTabPanel>
     </MudTabs>
@@ -73,12 +80,12 @@
 
     public void BtnGuardar()
     {
-        Navigation.NavigateTo("listagens/clientesficha");
+        Navigation.NavigateTo("listagens/clientesficha/" + clienteId);
     }
 
     public void BtnCancelar()
     {
-        Navigation.NavigateTo("listagens/clientesficha");
+        Navigation.NavigateTo("listagens/clientesficha/" + clienteId);
     }
 
 }

@@ -1,9 +1,23 @@
-<MudTextField T="string" Label="ERP ID" Value=@ERP_ID ReadOnly="true"/>
-<MudTextField T="string" Label="NIPC" Value=@NIPC ReadOnly="true"/>
-<MudTextField T="string" Label="Designação" Value=@Designacao ReadOnly="true"/>
+@inject VclienteService _VCliente
 
-@code{
-    public string ERP_ID { get; set; } = "999";
-    public string NIPC { get; set; } = "508504180";
-    public string Designacao { get; set; } = "Cascata de Números - Consultores, Lda.";
+@if (clienteSelecionado != null)
+{
+    <MudTextField T="int" Label="ID" Value=@clienteSelecionado.clienteId ReadOnly="true" />
+    <MudTextField T="string" Label="ERP ID  " Value=@clienteSelecionado.clienteErpid ReadOnly="true" />
+    <MudTextField T="string" Label="NIPC" Value=@clienteSelecionado.clienteNipc ReadOnly="true" />
+    <MudTextField T="string" Label="Designação" Value=@clienteSelecionado.clienteNome ReadOnly="true" />
+    <MudTextField T="string" Label="E-mail" Value=@clienteSelecionado.clienteEmail ReadOnly="true" />
+    <MudTextField T="string" Label="Telefone" Value=@clienteSelecionado.clienteTelefone ReadOnly="true" />
+    <MudTextField T="string" Label="Região" Value=@clienteSelecionado.regiaoNome ReadOnly="true" />
+    <MudTextField T="string" Label="Distrito" Value=@clienteSelecionado.distritoNome ReadOnly="true" />
+    <MudTextField T="string" Label="Concelho" Value=@clienteSelecionado.concelhoNome ReadOnly="true" />
+    <MudTextField T="string" Label="Setor" Value=@clienteSelecionado.setorNome ReadOnly="true" />
+    <MudTextField T="string" Label="CAE" Value=@clienteSelecionado.setorNome ReadOnly="true" />
+    <MudTextField T="string" Label="Dimensão" Value=@clienteSelecionado.dimensaoNome ReadOnly="true" />
+}
+
+@code {
+    [Parameter]
+    public vcliente? clienteSelecionado { get; set; }
+    
 }
